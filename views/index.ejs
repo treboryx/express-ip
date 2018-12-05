@@ -1,0 +1,27 @@
+<% include partials/header %>
+    <center><h4 class="display-4">IP Lookup</h4></center>
+
+    <% if(errors)
+    {
+         errors.forEach(function(error)
+        { %>
+            <div class="alert alert-danger" role="alert"><%= error.msg %> </div>
+        <% })
+    } %>
+
+    <center>
+    <div class="card" style="width: 25rem;">
+        <form method="POST" action="/lookup">
+            <div class="form-group" style="width: 19rem;">
+                <label>Enter IP</label> <br />
+                <input type="text" name="ip" class="form-control">
+
+            </div>
+        
+            <center><input type="submit" value="submit" class="btn btn-dark"></center>
+
+        </form>
+    </div>
+</center>
+    </div></center>
+<% include partials/footer %>
