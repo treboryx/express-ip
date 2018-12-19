@@ -84,9 +84,12 @@ app.post('/lookup', function(req, res)
 });
 
 // *********************************************
-/*                  APP LAUNCH                */
-
+/*           APP LAUNCH & UPTIME               */
+const http = require('http');
 app.listen(app.get('port'), function()
 {
+    setInterval(() => {
+        http.get(`http://express-ip.glitch.me/`);
+    }, 280000);
     console.log('IP lookup tool is live at localhost:' + app.get('port'));
 });
